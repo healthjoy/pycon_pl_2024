@@ -9,10 +9,10 @@ packages = [{include = "demo", from = "."}]
 [tool.poetry.dependencies]
 python = "^3.11"
 sqlalchemy = "^2.0.32"
-fastapi = "^0.112.1"
 opentelemetry-api = "^1.26.0"
 opentelemetry-exporter-otlp = "^1.26.0"
 opentelemetry-instrumentation-fastapi = "^0.47b0"
+fastapi = "^0.112.2"
 
 
 [tool.poetry.group.dev.dependencies]
