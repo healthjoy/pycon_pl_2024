@@ -1,0 +1,80 @@
+= PyCon PL 2024 Presentation References
+
+== Container Orchestration & Scaling
+
+- *Kubernetes*: An open-source system for automating deployment, scaling, and management of containerized applications.
+  - Official Documentation: https://kubernetes.io/docs/
+
+- *Karpenter*: An open-source node provisioning project built for Kubernetes.
+  - Official Documentation: https://karpenter.sh/docs/
+
+- *KEDA (Kubernetes Event-driven Autoscaling)*: A Kubernetes-based event-driven autoscaler.
+  - Official Documentation: https://keda.sh/docs/
+
+== Load Testing & Performance Testing
+
+- *JMeter*: An open-source software designed to load test functional behavior and measure performance.
+  - Official Documentation: https://jmeter.apache.org/usermanual/
+
+- *Gatling*: An open-source load and performance testing tool for web applications.
+  - Official Documentation: https://gatling.io/docs/
+
+- *Grafana K6*: A modern open-source load testing tool.
+  - Official Documentation: https://grafana.com/docs/k6/latest/
+
+- *Locust*: An easy-to-use, distributed, user load testing tool.
+  - Official Documentation: https://locust.io/
+
+== Monitoring & Observability
+
+- *Grafana*: A multi-platform open-source analytics and monitoring solution.
+  - Official Documentation: https://grafana.com/docs/
+
+- *OpenTelemetry*: Provides a set of APIs, libraries, agents, and instrumentation to provide observability across your services.
+  - Official Documentation: https://opentelemetry.io/docs/
+
+- *Mimir Rules Controller*: Kubernetes controller for managing Mimir alert rules as Kubernetes resources.
+  - Reference: https://github.com/healthjoy/mimir-rules-controller
+
+== Resilience & Fault Tolerance
+
+- *Tenacity*: A retrying library for Python.
+  - Official Documentation: https://tenacity.readthedocs.io/
+
+- *CircuitBreaker*: A circuit breaker pattern implementation in Python.
+  - Official Documentation: https://pypi.org/project/circuitbreaker/
+
+== Profiling & Performance
+
+- *cProfile*: A built-in Python module for profiling Python programs.
+  - Official Documentation: https://docs.python.org/3/library/profile.html
+
+- *py-spy*: A sampling profiler for Python programs.
+  - Official Documentation: https://github.com/benfred/py-spy
+
+- *pyinstrument*: A Python profiler that aims to provide a better overview of code performance.
+  - Official Documentation: https://pyinstrument.readthedocs.io/
+
+- *memory-profiler*: A module for monitoring memory usage of a Python program.
+  - Official Documentation: https://github.com/pythonprofilers/memory-profiler
+
+- *Objgraph*: A module that lets you visually explore Python object graphs.
+  - Official Documentation: http://mg.pov.lt/objgraph/
+
+- *Flask-Debug-Toolbar*: A toolbar for debugging Flask applications.
+  - Official Documentation: https://flask-debugtoolbar.readthedocs.io/
+
+- *Django-Debug-Toolbar*: A configurable set of panels that display various debug information about the current request/response.
+  - Official Documentation: https://django-debug-toolbar.readthedocs.io/
+
+- *FastAPI-Debug-Toolbar*: A debug toolbar for FastAPI applications.
+  - Official Documentation: https://pypi.org/project/fastapi-debug-toolbar/
+
+== Demo Flow
+```
+python -m timeit -r2 'import demo.example_job; demo.example_job.report_eligible_ids()'
+poetry run pyinstrument run_demo_job.py
+sudo py-spy record -o tmp/profile_demo_job.svg --pid $(ps ax | grep run_demo_job.py | grep python | awk '{print $1}')
+python -m cProfile run_demo_job.py
+```
+
